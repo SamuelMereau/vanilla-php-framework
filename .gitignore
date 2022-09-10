@@ -1,0 +1,15 @@
+.DS_Store
+/node_modules
+/vendor
+/composer.lock
+/package-lock.json
+/public/img/*.png
+/public/img/*.jpg
+/public/img/*.jpeg
+/public/img/*.webp
+/public/css
+/public/fonts
+/public/js
+/public/mix-manifest.json
+/app/pages.json
+/.env

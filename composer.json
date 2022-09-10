@@ -1,0 +1,14 @@
+{
+    "name": "samuelmereau/vanilla-php-framework",
+    "authors": [
+        {
+            "name": "Samuel Mereau"
+        }
+    ],
+    "autoload": {
+        "files": [ "mix.php" ]
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

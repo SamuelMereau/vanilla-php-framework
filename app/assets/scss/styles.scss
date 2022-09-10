@@ -1,0 +1,27 @@
+/**
+ * ==============================
+ *  Styles
+ * ==============================
+ *      Import all style
+ *      directories here
+ *
+ */
+
+@charset 'utf-8';
+
+// Vendor
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "./vendor/__vendor-dir";
+
+// Abstracts
+@import "./abstracts/__abstracts-dir";
+
+// Base
+@import "./base/__base-dir";
+
+// Components
+@import "./components/__components-dir";
