@@ -1,18 +1,8 @@
 <?php
 
-$pageTitle = "Home";
-$pageName = "home";
-$metaDescription = "";
+use VanillaPHP\Helpers\Route;
 
-/**
- * ==============================
- *  Page Middleware
- * ==============================
- */
-ob_start();
+require_once './app/Routes.php';
+require_once './vendor/autoload.php';
 
-    include "./templates/index.html.php";
-
-$output = ob_get_clean();
-
-include "./templates/layout.html.php";
+Route::handle($_SERVER['PHP_SELF']);
