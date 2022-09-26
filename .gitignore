@@ -10,6 +10,8 @@
 /public/css
 /public/fonts
 /public/js
+/public/img
 /public/mix-manifest.json
 /app/pages.json
 /.env
+/.idea

@@ -1,5 +1,7 @@
 <?php
 
+namespace VanillaPHP\Helpers;
+
 /**
  * ==============================
  *  URL Routes
@@ -9,9 +11,6 @@
  * 
  */
 
-/**
- * Class URL
- */
 class URL 
 {
     /**
@@ -19,13 +18,26 @@ class URL
      */
     private static array $slugs = [];
 
+    private static $instance;
+
     /**
      * @return bool
      */
     public static function initSlugs()
     {
-        self::$slugs = json_decode(file_get_contents(dirname(__DIR__).'/pages.json'), true);
+        self::$slugs = json_decode(file_get_contents(__DIR__.'/../../PageDirectory.json'), true);
         return true;
+    }
+
+    public static function urlInstance()
+    {
+        if (!isset(self::$instance))
+        {
+            $class = __CLASS__;
+            self::$instance = new $class();
+            self::$instance->initSlugs();
+        }
+        return self::$instance;
     }
 
     /**

@@ -10,7 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "imagemin-webpack-plugin": "^2.4.2"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
     "browser-sync": "^2.27.10",

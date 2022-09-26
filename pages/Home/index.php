@@ -1,7 +1,6 @@
 <?php
 
 $pageTitle = "Home";
-$pageName = "home";
 $metaDescription = "";
 
 /**
@@ -11,8 +10,8 @@ $metaDescription = "";
  */
 ob_start();
 
-    include "./templates/index.html.php";
+include __DIR__."/templates/index.html.php";
 
 $output = ob_get_clean();
 
-include "./templates/layout.html.php";
+include "../app/Global/layout.html.php";

@@ -1,8 +1,26 @@
 <?php
 
+/**
+ * ==============================
+ *  Vendor Autoload
+ * ==============================
+ */
+require_once '../vendor/autoload.php';
+
+/**
+ * ==============================
+ *  Initialise VanillaPHP
+ * ==============================
+ */
+require_once '../app/vanillaphp/Bean.php';
+
+/**
+ * ==============================
+ *  Build Routes
+ * ==============================
+ */
+require_once '../app/vanillaphp/RouteBuilder.php';
+
 use VanillaPHP\Helpers\Route;
 
-require_once './app/Routes.php';
-require_once './vendor/autoload.php';
-
-Route::handle($_SERVER['PHP_SELF']);
+Route::handle($_SERVER['REQUEST_URI']);

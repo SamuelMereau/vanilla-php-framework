@@ -9,7 +9,7 @@ class View
      *
      * @var string
      */
-    private static $path = __DIR__.'/../../pages';
+    private static $path = __DIR__.'/../../../pages';
 
     /**
      * Render a view
@@ -18,10 +18,9 @@ class View
      * @param array $parameters
      * @return mixed
      */
-    public static function render($view, $parameters = array())
+    public static function render($view, $parameters = array(), $isErrorPage = false)
     {
-        $index = json_decode(file_get_contents(self::$path.'/'.$view.'/config.json'), true)[$view];
-        return self::getContents($index, $parameters);
+        return self::getContents(self::$path.'/'.$view.'/index.php', $parameters, $isErrorPage);
     }
 
     /**
@@ -31,15 +30,23 @@ class View
      * @param array $parameters
      * @return mixed
      */
-    public static function getContents($file, $parameters = array()) 
+    public static function getContents($file, $parameters = array(), $isErrorPage) 
     {
         extract($parameters, EXTR_SKIP);
         unset($parameters);
 
+        if ($isErrorPage)
+        {
+            require __DIR__."/../Bean.php";
+            require $file;
+            unset($file);
+            return true;
+        }
+        
         ob_start();
+        require __DIR__."/../Bean.php";
         require $file;
         unset($file);
-        
         return ob_get_clean();
     }
 }

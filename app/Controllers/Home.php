@@ -1,11 +1,11 @@
 <?php
 
-namespace VanillaPHP\PageControllers;
+namespace App\Controllers;
 
 use VanillaPHP\Helpers\Params;
 use VanillaPHP\Helpers\View;
 
-class HomeController
+class Home
 {
     public function index()
     {
