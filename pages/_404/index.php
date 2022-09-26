@@ -1,7 +1,6 @@
 <?php
 
 $pageTitle = "404";
-$pageName = "404";
 $metaDescription = "";
 
 /**
@@ -11,8 +10,8 @@ $metaDescription = "";
  */
 ob_start();
 
-    include "./templates/404.html.php";
+    include __DIR__."/templates/404.html.php";
 
 $output = ob_get_clean();
 
-include "./templates/layout.html.php";
+include "../app/Global/layout.html.php";

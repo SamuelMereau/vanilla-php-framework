@@ -1,18 +1,26 @@
 <?php
 
-$pageTitle = "Home";
-$pageName = "home";
-$metaDescription = "";
+/**
+ * ==============================
+ *  Vendor Autoload
+ * ==============================
+ */
+require_once '../vendor/autoload.php';
 
 /**
  * ==============================
- *  Page Middleware
+ *  Initialise VanillaPHP
  * ==============================
  */
-ob_start();
+require_once '../app/vanillaphp/Bean.php';
 
-    include "./templates/index.html.php";
+/**
+ * ==============================
+ *  Build Routes
+ * ==============================
+ */
+require_once '../app/vanillaphp/RouteBuilder.php';
 
-$output = ob_get_clean();
+use VanillaPHP\Helpers\Route;
 
-include "./templates/layout.html.php";
+Route::handle($_SERVER['REQUEST_URI']);
