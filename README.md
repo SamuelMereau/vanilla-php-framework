@@ -19,6 +19,8 @@ Install dependencies
 ```
 $ npm i
 $ composer install
+
+$ npm run dev
 ```
 
 Finally, rename `.env.example` to `.env`.
