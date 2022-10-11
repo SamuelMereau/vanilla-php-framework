@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://<?= $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>" />
     <link rel="stylesheet" href="<?= mix('/css/styles.css'); ?>" />
     <script src="<?= mix('/js/app.js') ?>" async defer></script>
-    <link rel="canonical" href="<?= "https://".$_SERVER["HTTP_HOST"]."/".$_SERVER['PHP_SELF']?>">
+    <link rel="canonical" href="<?= "https://".$_SERVER["HTTP_HOST"].$_SERVER['PHP_SELF']?>">
     <title><?= $pageTitle ?> | <?= $_ENV["SITE_NAME"] ?></title>
 </head>
 <body>
