@@ -34,15 +34,15 @@ Every page for your site is stored under the `pages` directory. To initialise a 
 1. Create a new folder underneath the `pages` directory with the following structure:
 
    ```
-   [page_name]  
+   page_name  
     │   index.php  
     │      
     └─── templates
-    │        │   [template_name].html.php 
+    │        │   template_name.html.php 
     │        │   ...      
     │      
     └─── img (optional)
-    │        │   [img_name].(jpg/png/gif/svg)
+    │        │   img_name.(jpg/png/gif/svg)
     │        │   ...    
     ```
 2. Within the `index.php` file, include all templates you want to display
@@ -60,7 +60,7 @@ Every page for your site is stored under the `pages` directory. To initialise a 
     */
     ob_start();
 
-    include __DIR__."/templates/[template_name].html.php";
+    include __DIR__."/templates/template_name.html.php";
 
     $output = ob_get_clean();
 
@@ -73,7 +73,7 @@ Every page for your site is stored under the `pages` directory. To initialise a 
 
     ```json
     {
-        "[page_name]" : "/[url_slug]"
+        "page_name" : "/url_slug"
     }
     ```
 
@@ -89,11 +89,11 @@ Every page for your site is stored under the `pages` directory. To initialise a 
     use VanillaPHP\Helpers\Params;
     use VanillaPHP\Helpers\View;
 
-    class [page_name]
+    class page_name
     {
         public function index()
         {
-            return View::render('[page_name]', []);
+            return View::render('page_name', []);
         }
     }
     ```
